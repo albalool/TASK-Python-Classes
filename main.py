@@ -1,3 +1,7 @@
+from turtle import distance
+from typing_extensions import Self
+
+
 class Wallet:
     def __init__(self, money):
         self.money = money
@@ -15,11 +19,9 @@ class Wallet:
         return f"{self.money}"
 
 
-#wallet = Wallet(6)
-# # wallet = Wallet()  # This should default money inside the wallet to 0
-#print(wallet.money)
-# wallet.credit(9)
-# wallet.debit(5)
+wallet = Wallet(6)
+wallet = Wallet()  # This should default money inside the wallet to 0
+print(wallet.money)
 
 
 class Person:
@@ -27,8 +29,9 @@ class Person:
         self.name = name
         self.location = location
         self.wallet = Wallet(money)
+    
+    location = 8
 
-  
     def moveTo(self, point):
         self.location = self.location - point
 
@@ -39,20 +42,44 @@ class Person:
 
 person = Person("Moh", 5, 50)
 print(person)
+ 
 
 
+class Vendor(Person):
+    def __init__(self, name, location, money, range , price):
+        super().__init__(name, location, money)
+        self.range = range
+        self.price = price
+    range = 5
+    price = 1
 
-# class Vendor:
-#     # implement Vendor!
-#     pass
+    def sellTo(customer, number_of_icecreams):
+        Person.moveTo()
+        Wallet.debit()
 
 
-# vendor = Vendor("Abdallah", 3, 6)
+vendor = Vendor("Abdallah", 3, 6)
 
 
-# class Customer:
-#     # implement Customer!
-#     pass
+class Customer(Person):
+    def __init__(self, name, location, money):
+        super().__init__(name, location, money)
 
 
-# customer = Customer("Abdallah", 3, 6)
+    def is_in_range():
+        distance = abs(Vendor(range) - Person.location())
+        return distance
+
+    def have_enough_mony(vendor, number_of_icecreams):
+        if Vendor.money() >= number_of_icecreams:
+            return print("You can buy")
+        else:
+            print("You don't have enough money")
+
+    def request_icecream(vendor, number_of_icecream):
+        if
+        else:
+            pass
+
+
+customer = Customer("Abdallah", 3, 6)
