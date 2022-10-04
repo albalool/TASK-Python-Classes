@@ -58,7 +58,7 @@ class Customer(Person):
         if self._is_in_range(vendor) and self._have_enough_money(
             vendor, number_of_icecream
         ):
-            return vendor.sellTo(self, number_of_icecream)
+            vendor.sellTo(self, number_of_icecream)
 
 
 vendor_lulu = Vendor("lulu", 10, 10)
